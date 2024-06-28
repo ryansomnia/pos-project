@@ -1,6 +1,6 @@
 // pages/login.js
 "use client"; // This is a client component  
-// test
+
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -44,57 +44,42 @@ export default function Login() {
       console.log('====================================');
       setError('An error occurred. Please try again.');
     }
-  
-
   }
+
   return (
     <>
-    <div className='flex bg-black'>
-      
-<h1>hai</h1>
-    </div>
-      {/* <Head>
-        <title>Login Page</title>
-      </Head>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="flex flex-col md:flex-row w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
-            <h3 className="text-3xl font-bold text-center mb-4">Login to Your Account</h3>
-            <form onSubmit={handleLogin}>
-              <div className="mt-4">
-                <div>
-                  <label className="block text-sm font-medium" htmlFor="username">Username</label>
-                  <input
-                    type="email"
-                    placeholder="Username"
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="w-full px-4 py-2 mt-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="block text-sm font-medium">Password</label>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-4 py-2 mt-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  />
-                </div>
-                <div className="flex items-baseline justify-between mt-4">
-                <button type="submit" className="px-6 py-2 bg-white text-purple-700 rounded-lg hover:bg-gray-200">Login</button>
-                  <a href="#" className="text-sm hover:underline">Forgot password?</a>
-                </div>
-              </div>
+      <div className='flex h-screen'>
+        <div className='w-full md:w-1/2 flex items-center justify-center'>
+          <div className='flex flex-col items-center'>
+            <h1 className='text-black-50 text-3xl mb-5'>Login</h1>
+            <form onSubmit={handleLogin} className='flex flex-col gap-4' autoComplete="off">
+              <input
+             
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder='Username'
+                className='p-2 rounded'
+                autoComplete="off"
+              />
+              <input
+             
+                type='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='Password'
+                className='p-2 rounded'
+                autoComplete="off"
+              />
+              <button type='submit' className='p-2 bg-blue-500 rounded text-white'>Login</button>
+              {error && <p className='text-red-500'>{error}</p>}
             </form>
           </div>
-          <div className="w-full md:w-1/2 hidden md:block">
-            <img src="/login-photo.jpg" alt="Login image" className="object-cover w-full h-full" />
-          </div>
         </div>
-      </div> */}
+        <div className='hidden md:block w-1/2 bg-green-500'>
+          {/* Right box content */}
+        </div>
+      </div>
     </>
   );
 }
